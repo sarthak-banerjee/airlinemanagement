@@ -5,20 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 15px;
+            background-color: #e7d7a9;}
+        form {
+            border: 5px solid #383535;}
+        h1 {
+            text-align:center;
+            font-size:18;
+            }
+            .formcontainer {
+            text-align: left;
+            margin: 24px 50px 12px;
+            }
+            .container {
+            padding: 16px 0;
+            text-align:left;
+            }
+    </style>
 </head>
 <body>
     <form action="airdata">
+        <h1>Airline Management</h1>
+        <div class="formcontainer">
+        <hr/>
+        <div class="container">
         Id <input type="text" name="t1"/><br>
+
         Name <input type="text" name="t2"/><br>
+
         No Of Flights  <input type="text" name="t3"/><br>
+
         Last Service Date  <input type="text" name="t4"/><br>
-        Service Required  <input type="text" name="t5"/><br>
+
+        Service Required
+        <input type="radio" id="ser_req" name="t5" value="1">
+        <label for="True">Yes</label>
+        <input type="radio" id="ser_req" name="t5" value="0">
+        <label for="False">No</label><br>
+
         Distance Travelled <input type="text" name="t6"/><br>
-        Base Station <input type="text" name="t7"/><br>
+
+        <label for="Base Station">Base Station </label>
+        <select id="base_station" name="t7">
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Hyderabad">Hyderabad</option>
+        </select><br>
+
+        Food Available
+        <input type="checkbox" id="food" name="t8" value="Yes">
+        <label for="Veg">Veg</label>
+        <input type="checkbox" id="food" name="t9" value="Yes">
+        <label for="Non-Veg">Non-Veg</label>
+        <input type="checkbox" id="food" name="t10" value="Yes">
+        <label for="Jain">Jain</label>
+        <input type="checkbox" id="food" name="t11" value="Yes">
+        <label for="Continental">Continental</label><br>
+
         <input type="submit" value="Insert" name="b1"/>
         <input type="submit" value="Select" name="b1"/>
         <input type="submit" value="Update" name="b1"/>
         <input type="submit" value="Delete" name="b1"/>
+        </div>
+        </div>
     </form>
 </body>
 </html>
