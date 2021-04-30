@@ -10,11 +10,12 @@ def crud(request):
     print(button)
     if button == "Insert":
         name = request.GET['t2']
-        age = int(request.GET['t3'])
+        no_of_flights = int(request.GET['t3'])
         last_ser = (request.GET['t4'])
         ser_req = bool(request.GET['t5'])
         dist = float(request.GET['t6'])
-        e = air_data.objects.create(name=name,age=age,last_service_date=last_ser,service_required=ser_req,distance_travelled=dist)
+        base_station = request.GET['t7']
+        e = air_data.objects.create(name=name,no_of_flights=no_of_flights,last_service_date=last_ser,service_required=ser_req,distance_travelled=dist,base_station=base_station)
         msg = "Record Saved"
         return render(request,'result.html',{'msg':msg})
     elif button == "Select":
@@ -25,28 +26,32 @@ def crud(request):
         msg1 = msg.id
         #print(msg.name)
         msg2 = msg.name
-        #print(msg.age)
-        msg3 = msg.age
+        #print(msg.no_of_flights)
+        msg3 = msg.no_of_flights
         #print(msg.last_service_date)
         msg4 = msg.last_service_date
         #print(msg.service_required)
         msg5 = msg.service_required
         #print(msg.distance_travelled)
         msg6 = msg.distance_travelled
-        return render(request,'show.html',{'msg1':msg1,'msg2':msg2,'msg3':msg3,'msg4':msg4,'msg5':msg5,'msg6':msg6})
+        #print(msg.distance_travelled)
+        msg7 = msg.base_station
+        return render(request,'show.html',{'msg1':msg1,'msg2':msg2,'msg3':msg3,'msg4':msg4,'msg5':msg5,'msg6':msg6,'msg7':msg7})
     elif button == "Update":
         id = int(request.GET['t1'])
         name = request.GET['t2']
-        age = int(request.GET['t3'])
+        no_of_flights = int(request.GET['t3'])
         last_ser = (request.GET['t4'])
         ser_req = bool(request.GET['t5'])
         dist = float(request.GET['t6'])
+        base_station = request.GET['t7']
         obj = air_data.objects.get(pk=id)
         obj.name = name
-        obj.age = age
+        obj.no_of_flights = no_of_flights
         obj.last_service_date = last_ser
         obj.service_required = ser_req
         obj.distance_travelled = dist
+        obj.base_station = base_station
         obj.save()
         msg="Record Updated"
         return render(request,'result.html',{'msg':msg})
