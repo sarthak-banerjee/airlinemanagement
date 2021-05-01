@@ -12,9 +12,16 @@ def crud(request):
         name = request.GET['t2']
         no_of_flights = int(request.GET['t3'])
         last_ser = (request.GET['t4'])
-        ser_req = bool(request.GET['t5'])
+
+        a = (request.GET['t5'])
+        if a == '1':
+            ser_req = bool(True)
+        elif a == '0' :
+            ser_req = bool(False)
+ 
         dist = float(request.GET['t6'])
         base_station = request.GET['t7']
+        
         veg = request.GET['t8']
         non_veg = request.GET['t9']
         jain = request.GET['t10']
@@ -35,7 +42,10 @@ def crud(request):
         #print(msg.last_service_date)
         msg4 = msg.last_service_date
         #print(msg.service_required)
-        msg5 = msg.service_required
+        if msg.service_required == 0:
+            msg5 = "No"
+        elif msg.service_required == 1:
+            msg5 ="Yes"
         #print(msg.distance_travelled)
         msg6 = msg.distance_travelled
         #print(msg.base_station)
