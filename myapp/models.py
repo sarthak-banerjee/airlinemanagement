@@ -12,7 +12,8 @@ class air_data(models.Model):
     non_veg = models.CharField(max_length=30,default="No")
     jain = models.CharField(max_length=30,default="No")
     continental = models.CharField(max_length=30,default="No")
-    image = models.CharField(max_length=30, blank=True, null=False)
+    image = models.ImageField(upload_to='upload/')
+    #image = models.CharField(max_length=30, blank=True, null=False)
     #to give table name AMS Data
     class Meta:
         db_table="AMS Data"

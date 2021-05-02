@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>Airline Management</title>
     <style>
         html, body {
             display: flex;
@@ -60,14 +60,26 @@
         </select><br>
 
         Food Available
-        <input type="checkbox" id="food" name="t8" value="Yes">
+        <input type="checkbox" id="food1" name="t8" defaultValue="No" value="Yes" default="No">
         <label for="Veg">Veg</label>
-        <input type="checkbox" id="food" name="t9" value="Yes">
+        <input type="checkbox" id="food2" name="t9" defaultValue="No" value="Yes" default="No">
         <label for="Non-Veg">Non-Veg</label>
-        <input type="checkbox" id="food" name="t10" value="Yes">
+        <input type="checkbox" id="food3" name="t10" defaultValue="No" value="Yes" default="No">
         <label for="Jain">Jain</label>
-        <input type="checkbox" id="food" name="t11" value="Yes">
+        <input type="checkbox" id="food4" name="t11" defaultValue="No" value="Yes" default="No">
         <label for="Continental">Continental</label><br>
+
+        Upload Image
+        <input type="file"  accept="image/*" name="t12" id="file"  onchange="loadFile(event)">
+        <p><img id="output" width="200"/></p>
+
+        <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+        </script>
+        <br>
 
         <input type="submit" value="Insert" name="b1"/>
         <input type="submit" value="Select" name="b1"/>
@@ -75,6 +87,8 @@
         <input type="submit" value="Delete" name="b1"/>
         </div>
         </div>
+
     </form>
+
 </body>
 </html>
