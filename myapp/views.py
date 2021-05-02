@@ -31,27 +31,18 @@ def crud(request):
     elif button == "Select":
         id = int(request.GET['t1'])
         msg = air_data.objects.get(pk=id)
-        #obj=air_data.object.get(pk=id)
-        #print(msg.id)
+
         msg1 = msg.id
-        #print(msg.name)
         msg2 = msg.name
-        #print(msg.no_of_flights)
         msg3 = msg.no_of_flights
-        #print(msg.last_service_date)
         msg4 = msg.last_service_date
-        #print(msg.service_required)
         if msg.service_required == 0:
             msg5 = "No"
         elif msg.service_required == 1:
             msg5 ="Yes"
-        #print(msg.distance_travelled)
         msg6 = msg.distance_travelled
-        #print(msg.base_station)
         msg7 = msg.base_station 
-        #print(msg.image)
         msg8 = msg.image
-        #print(msg.accept)
         msg9 = msg.accept
         return render(request,'show.html',{'msg1':msg1,'msg2':msg2,'msg3':msg3,'msg4':msg4,'msg5':msg5,'msg6':msg6,'msg7':msg7,'msg8':msg8,'msg9':msg9})
     elif button == "Update":

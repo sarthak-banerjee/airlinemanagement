@@ -9,12 +9,6 @@ class air_data(models.Model):
     distance_travelled = models.FloatField(blank=True, null=False, default=0)
     base_station = models.CharField(max_length=30)
     accept = models.CharField(max_length=30,default="No")
-    # veg = models.CharField(max_length=30,default="No")
-    # non_veg = models.CharField(max_length=30,default="No")
-    # jain = models.CharField(max_length=30,default="No")
-    # continental = models.CharField(max_length=30,default="No")
     image = models.ImageField(upload_to='upload/')
-    #image = models.CharField(max_length=30, blank=True, null=False)
-    #to give table name AMS Data
     class Meta:
         db_table="AMS Data"
