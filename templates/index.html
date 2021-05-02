@@ -59,18 +59,8 @@
             <option value="Hyderabad">Hyderabad</option>
         </select><br>
 
-        Food Available
-        <input type="checkbox" id="food1" name="t8" defaultValue="No" value="Yes" default="No">
-        <label for="Veg">Veg</label>
-        <input type="checkbox" id="food2" name="t9" defaultValue="No" value="Yes" default="No">
-        <label for="Non-Veg">Non-Veg</label>
-        <input type="checkbox" id="food3" name="t10" defaultValue="No" value="Yes" default="No">
-        <label for="Jain">Jain</label>
-        <input type="checkbox" id="food4" name="t11" defaultValue="No" value="Yes" default="No">
-        <label for="Continental">Continental</label><br>
-
         Upload Image
-        <input type="file"  accept="" name="t12" id="file"  onchange="loadFile(event)">
+        <input type="file"  accept="" name="t8" id="file"  onchange="loadFile(event)">
         <p><img id="output" width="200"/></p>
 
         <script>
@@ -79,6 +69,10 @@
             image.src = URL.createObjectURL(event.target.files[0]);
         };
         </script>
+        <br>
+
+        <input type="checkbox" id="t&c" name="t9" value="Yes">
+        <label for="Veg">I accept the terms and conditions.</label>
         <br>
 
         <input type="submit" value="Insert" name="b1"/>
